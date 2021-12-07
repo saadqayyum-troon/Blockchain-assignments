@@ -1,3 +1,5 @@
+[![N|Solid](https://eadn-wc04-4642508.nxedge.io/cdn/wp-content/themes/troontechnologies/assets/img/inner-logo.svg)](https://troontechnologies.com/)
+
 # Blockchain coding assignments
 
 This document will cover four weeks(1 month) coding assignments, the assignments will focus mainly on Ethereum, solidity, web3 based development. At the end of each assignment, your code will be reviewed by a senior developer. 
@@ -41,4 +43,6 @@ The token contract should use the safeMath library for all the arithmetic operat
 | Metadata standard | https://docs.opensea.io/docs/metadata-standards |
 
 > Note: Deploy the token contract on Rinkeby testnet and test all methods using Metamask wallet. 
+
+## Asignment # 3
 
