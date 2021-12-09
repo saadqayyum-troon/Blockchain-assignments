@@ -2,7 +2,7 @@
 
 # Blockchain coding assignments
 
-This document will cover four weeks(1 month) coding assignments, the assignments will focus mainly on Ethereum, solidity, web3 based development. At the end of each assignment, your code will be reviewed by a senior developer. 
+This document will cover four weeks coding assignments, the assignments will focus mainly on Ethereum, solidity, web3 based development. At the end of each assignment, your code will be reviewed by a senior developer. 
 
 > Note: Write your code while using solidity latest version (currently 0.8.9)
 
@@ -26,7 +26,7 @@ The token contract should use the safeMath library for all the arithmetic operat
 
 ## Assignment # 2:
 **Problem Statment:**
-    Create a smart contract to sell NFTs. The total number of NFTs available will be 100 and each NFT costs 0.5 Ethers. A single user can not buy more than 10 NFTs.  All of the collected ETH tokens should be transferred to the admin wallet. 
+Create a smart contract to sell NFTs. The total number of NFTs available will be 100 and each NFT costs 0.5 Ethers. A single user can not buy more than 10 NFTs.  All of the collected ETH tokens should be transferred to the admin wallet. 
 
 **Additional Information**
 1. Use ERC721 standard to create NFTs.
@@ -45,4 +45,28 @@ The token contract should use the safeMath library for all the arithmetic operat
 > Note: Deploy the token contract on Rinkeby testnet and test all methods using Metamask wallet. 
 
 ## Asignment # 3
+**Problem Statment:**
+Create a lottery system where users can buy lottery tickets and can win a grand prize. Each lottery ticket costs 0.1 ETH. Once a ticket is bought it is not refundable nor the user can send it to anyone. A total of 100 tickets will be available in each lottery. Users can buy as many tickets as they want. Each lottery ticket will have a ticket id and the winning Id will be decided randomly. The reward for the winner will be 9.0 ETH and 1.0 ETH will go to the admin wallet. Once all the tickets are sold a new lottery will be started with the same reward. 
 
+Create a function through which lottery winners can claim their reward. 
+
+**Addidtional Information**
+1. You can use chainlink oracle to generate random number.
+2. Use reentrancy guard on the payable functions.
+3. Contract should be ownable.
+
+**Helping Material**
+| Item | Link |
+| ------ | ------ |
+| Chain link VRF generator| https://docs.chain.link/docs/chainlink-vrf/#generate-random-numbers-in-your-smart-contracts |
+
+## Asignment # 4
+( Assignment 4 is a continuation of assignment 3)
+
+Create a single-page user interface for the lottery system, where users can buy tickets using their Metamask wallet. Users can see how many tickets are left, the price of each ticket, the total prize for the lottery. A claim button for the winners through which they can claim their reward. And a collect funds option for the admin to collect his/her funds. 
+You can use any javascript framework (react, angular, vuejs).
+
+**Helping Material**
+| Item | Link |
+| ------ | ------ |
+| Metamask integration tutorial | https://youtu.be/LzdMosLzj80 |
