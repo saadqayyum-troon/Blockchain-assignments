@@ -58,7 +58,7 @@ contract ERC20 is Ownable {
         uint256 currentAllowance = allowances[msg.sender][_spender];
         require(currentAllowance >= _amount, "ERC20: decreased allowance below zero");
     
-        approve(_spender, currentAllowance - _amount);
+        approve(_spender, currentAllowance.sub(_amount));
         return true;
     }
 
