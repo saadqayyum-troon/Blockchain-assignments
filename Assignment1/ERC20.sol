@@ -11,7 +11,7 @@ contract ERC20 is Ownable {
     string public symbol;
     uint8 public decimals;
     uint public totalSupply;
-    uint public immutable cap;
+    uint public immutable MAX_SUPPLY;
 
     mapping(address => uint) private balances;
     mapping(address => mapping(address => uint)) private allowances;
@@ -23,11 +23,11 @@ contract ERC20 is Ownable {
         name = "TroonToken";
         symbol = "TRN";
         decimals = 8;
-        cap = 20_000_000;
+        MAX_SUPPLY = 20_000_000 * 10**decimals;
     }
 
     function mint(uint _amount) public onlyOwner {
-        require(totalSupply.add(_amount) < cap, "ERC20: Capp Exceeded");
+        require(totalSupply.add(_amount) <= MAX_SUPPLY, "MINT: Max Supply Exceeded");
         totalSupply = totalSupply.add(_amount);
         balances[msg.sender] = balances[msg.sender].add(_amount);
         emit Transfer(address(0), msg.sender, _amount);
@@ -56,7 +56,7 @@ contract ERC20 is Ownable {
 
     function decreaseAllowance(address _spender, uint256 _amount) public returns (bool) {
         uint256 currentAllowance = allowances[msg.sender][_spender];
-        require(currentAllowance >= _amount, "ERC20: decreased allowance below zero");
+        require(currentAllowance >= _amount, "DECREASE_ALLOWANCE: decreased allowance below zero");
     
         approve(_spender, currentAllowance.sub(_amount));
         return true;
